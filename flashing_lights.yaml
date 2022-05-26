@@ -98,7 +98,7 @@ action:
                 - service: light.toggle
                   target: !input light_target
           - service: scene.turn_on
-            data:
+            target:
               entity_id: scene.all_lights_snapshot
       - conditions:
           - "{{ scene_target != 'scene.none' }}"
@@ -130,5 +130,5 @@ action:
                     milliseconds: >
                       {{ delay }}
           - service: scene.turn_on
-            data:
+            target:
               entity_id: scene.all_lights_snapshot
